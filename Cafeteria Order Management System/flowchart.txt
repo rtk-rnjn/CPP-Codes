@@ -1,0 +1,64 @@
++----------------+                               +------------+
+|                |   choice=front.__MAIN_MENU()  |            |
+|  Display Main  |------------------------------>| Get user's |
+|     Menu       |                               |    choice  |
++----------------+                               +------------+
+        |
+        | choice == 3 (Exit)
+        V 
+  +---------+                       +-------+
+  |  Exit   |<----------------------| Break |
+  +---------+                       +-------+
+        | 
+        | choice == 2 (Continue to buy)      
+        V 
++----------------+
+| Display items  |           itemName,quantity    +----------------+
+|     Menu       |<------------------------------>|__ADD_TO_CART() |
+|   Get input    |                                +----------------+
+|__CONTINUE_TO_BUY|
++----------------+
+        |
+        | choice == 1 (Admin Login)
+        V
++----------------+
+| Display prompt |          password               +----------------+
+|     Menu       |<------------------------------->|__ADMIN_LOGIN() |
+|   Get input    |         login = true/false      +----------------+
++----------------+
+        |
+        |          login is false (Wrong password)
+        V
++----------------+
+| Display prompt |
+|  Wrong Passowrd|
++----------------+
+        |
+        |          login is true (Correct password)
+        V
++----------------+                                +---------------+
+|  Display Admin |adminChoice=front.__ADMIN_MENU()|  Get user's   |
+|     Menu       |<------------------------------>|     choice    |
++----------------+                                +---------------+
+        |
+        | adminChoice == 1 (Admin Add Item)
+        V
++----------------+                                
+| Display prompt |     itemName,quantity,price    +------------------+
+|  Admin Add Item|<------------------------------>|__ADMIN_ADD_ITEM()|
+|   Get input    |                                +------------------+
++----------------+
+        |
+        | adminChoice == 2 (Admin Remove Item)
+        V
++----------------+                                
+| Display prompt |             itemName           +---------------------+ 
+|Admin Remove Item|<----------------------------->|__ADMIN_REMOVE_ITEM()|
+|   Get input    |                                +---------------------+
++----------------+
+        |                                                   
+        | adminChoice == 3 (View Items)
+        V                                                   
++----------------+                                +----------------+
+| Display items  |<------------------------------>|DISPLAY_ITEMS() |
++----------------+                                +----------------+

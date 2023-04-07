@@ -58,7 +58,7 @@ public:
 
         // Close the file
         infile.close();
-    };
+    }
 
     double __GET_ITEM_PRICE(string itemName)
     {
@@ -115,20 +115,17 @@ public:
         cout << "+----------------------------------------+" << endl;
     }
 
-    string center(string s, int w)
-    {
+    string center(string s, int w) {
         return string((w - s.size()) / 2, ' ') + s;
     }
 
-    void prompt(string s)
-    {
+    void prompt(string s) {
         cout << "+----------------------------------------+" << endl;
         cout << "|" << center(s, 42) << "|" << endl;
         cout << "+----------------------------------------+" << endl;
     }
 
-    int __MAIN_MENU()
-    {
+    int __MAIN_MENU() {
         cout << endl;
         cout << "+----------------------------------------+" << endl;
         cout << "|  1. Admin Login                        |" << endl;
@@ -136,26 +133,18 @@ public:
         cout << "|  3. Exit                               |" << endl;
         cout << "+----------------------------------------+" << endl;
 
-        int choice;
-        cout << "Enter your choice: ";
-        cin >> choice;
-
+        int choice; cout << "Enter your choice: "; cin >> choice;
         return choice;
     }
 
     bool __ADMIN_LOGIN(string password)
     {
         if (password == "admin")
-        {
             return true;
-        }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 
-    inline int __ADMIN_MENU()
+    int __ADMIN_MENU()
     {
         cout << "+----------------------------------------+" << endl;
         cout << "|  1. Add Item                           |" << endl;

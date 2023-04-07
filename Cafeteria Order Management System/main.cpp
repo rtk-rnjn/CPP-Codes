@@ -5,8 +5,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     Front front;
     Admin admin("admin");
 
@@ -14,21 +13,18 @@ int main()
     bool login;
     string pass;
 
-    while (1 == 1)
-    {
+    while (1 == 1) {
         choice = front.__MAIN_MENU();
         if (choice == 3)
             break;
         else if (choice == 2)
             front.__CONTINUE_TO_BUY();
-        else if (choice == 1)
-        {
+        else if (choice == 1) {
             cout << "Enter The Passowrd: " << endl;
             cin >> pass;
             login = front.__ADMIN_LOGIN(pass);
 
-            if (login)
-            {
+            if (login) {
                 adminChoice = front.__ADMIN_MENU();
                 if (adminChoice == 1)
                     admin.__ADMIN_ADD_ITEM();
@@ -45,6 +41,5 @@ int main()
     }
 
     cout << "THANK YOU FOR USING THE PROGRAM!";
-
     return 0;
 }

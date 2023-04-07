@@ -1,5 +1,4 @@
 #include <iostream>
-#include <map>
 #include <string>
 
 using namespace std;
@@ -16,7 +15,6 @@ private:
     int days[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int year;
     bool isLeapYear;
-    map<int, string> mDays = {{0, "Sunday"}, {1, "Monday"}, {2, "Tuesday"}, {3, "Wednesday"}, {4, "Thursday"}, {5, "Friday"}, {6, "Saturday"}};
 
 public:
     Calander(bool isLeapYear, int year){
@@ -27,6 +25,7 @@ public:
         this->isLeapYear = isLeapYear;
         this->year = year;
     }
+
     string getMonth(int monthNumber)
     {
         string months[] = {
@@ -41,13 +40,8 @@ public:
         return (year + year / 4 - year / 100 + year / 400 + t[month - 1] + day) % 7;
     }
 
-    string __INT_DAY_TO_MONTH(int num)
-    {
-        return mDays[num];
-    }
-
     void display(int monthNumber);
-    int getNumberOfDays(int monthNumber, bool isLeapYear);
+    int getNumberOfDays(int monthNumber);
 };
 
 void Calander::display(int monthNumber)
@@ -58,7 +52,7 @@ void Calander::display(int monthNumber)
     cout << "-----------------------------------" << endl;
 }
 
-int Calander::getNumberOfDays(int monthNumber, bool isLeapYear)
+int Calander::getNumberOfDays(int monthNumber)
 {
     int days[] = {
         31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
